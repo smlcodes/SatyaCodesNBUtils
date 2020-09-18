@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.javaswing.javaapp;
+package javaswing.javaapp;
 
 /**
  *
  * @author KavetiS
  */
-public class JasperUtilForm extends javax.swing.JFrame {
+public class InvoiceUtilForm extends javax.swing.JFrame {
 
     /**
      * Creates new form DashBoardForm
      */
-    public JasperUtilForm() {
+    public InvoiceUtilForm() {
         initComponents();
     }
 
@@ -31,14 +31,14 @@ public class JasperUtilForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         dashboardMenubar = new javax.swing.JMenuBar();
         Options = new javax.swing.JMenu();
-        maindashboardmenu = new javax.swing.JMenuItem();
+        maindashboard = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         lodoutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Jasper Reports Utility ");
+        jLabel1.setText("Invoice Utility");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -59,13 +59,13 @@ public class JasperUtilForm extends javax.swing.JFrame {
 
         Options.setText("File");
 
-        maindashboardmenu.setText("Main Dashboard");
-        maindashboardmenu.addActionListener(new java.awt.event.ActionListener() {
+        maindashboard.setText("Main Dashboard");
+        maindashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                maindashboardmenuActionPerformed(evt);
+                maindashboardActionPerformed(evt);
             }
         });
-        Options.add(maindashboardmenu);
+        Options.add(maindashboard);
 
         dashboardMenubar.add(Options);
 
@@ -108,12 +108,12 @@ public class JasperUtilForm extends javax.swing.JFrame {
         sf.setVisible(true);
     }//GEN-LAST:event_lodoutMenuItemActionPerformed
 
-    private void maindashboardmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maindashboardmenuActionPerformed
+    private void maindashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maindashboardActionPerformed
         // TODO add your handling code here:
-                dispose();
+                        dispose();
         DashBoardForm sf = new DashBoardForm();
         sf.setVisible(true);
-    }//GEN-LAST:event_maindashboardmenuActionPerformed
+    }//GEN-LAST:event_maindashboardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,23 +132,21 @@ public class JasperUtilForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JasperUtilForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InvoiceUtilForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JasperUtilForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InvoiceUtilForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JasperUtilForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InvoiceUtilForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JasperUtilForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InvoiceUtilForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JasperUtilForm().setVisible(true);
+                new InvoiceUtilForm().setVisible(true);
             }
         });
     }
@@ -160,6 +158,6 @@ public class JasperUtilForm extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem lodoutMenuItem;
-    private javax.swing.JMenuItem maindashboardmenu;
+    private javax.swing.JMenuItem maindashboard;
     // End of variables declaration//GEN-END:variables
 }
