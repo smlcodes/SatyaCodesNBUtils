@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InvoiceReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c8c5cc60-4f33-4f77-bee3-56afd587bbdd">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="invTxt" class="java.lang.String"/>
+	<field name="txtLine1" class="java.lang.String"/>
+	<field name="txtCompanyName" class="java.lang.String"/>
+	<field name="dateTxt1" class="java.lang.String"/>
+	<field name="txtLine2" class="java.lang.String"/>
+	<field name="txtPhno" class="java.lang.String"/>
+	<field name="txtWebsite" class="java.lang.String"/>
+	<field name="txtCustname" class="java.lang.String"/>
+	<field name="txtCustcompany" class="java.lang.String"/>
+	<field name="txtCustline1" class="java.lang.String"/>
+	<field name="txtCustline2" class="java.lang.String"/>
+	<field name="sno1" class="java.lang.Integer"/>
+	<field name="sno2" class="java.lang.Integer"/>
+	<field name="sno3" class="java.lang.Integer"/>
+	<field name="sno4" class="java.lang.Integer"/>
+	<field name="q1" class="java.lang.Integer"/>
+	<field name="q2" class="java.lang.Integer"/>
+	<field name="q3" class="java.lang.Integer"/>
+	<field name="q4" class="java.lang.Integer"/>
+	<field name="i1" class="java.lang.String"/>
+	<field name="i2" class="java.lang.String"/>
+	<field name="i3" class="java.lang.String"/>
+	<field name="i4" class="java.lang.String"/>
+	<field name="etctxt" class="java.lang.String"/>
+	<field name="txtFooter" class="java.lang.String"/>
+	<field name="p1" class="java.lang.Double"/>
+	<field name="p2" class="java.lang.Double"/>
+	<field name="p3" class="java.lang.Double"/>
+	<field name="p4" class="java.lang.Double"/>
+	<field name="t1" class="java.lang.Double"/>
+	<field name="t2" class="java.lang.Double"/>
+	<field name="t3" class="java.lang.Double"/>
+	<field name="t4" class="java.lang.Double"/>
+	<field name="etctotal" class="java.lang.Double"/>
+	<field name="total" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
