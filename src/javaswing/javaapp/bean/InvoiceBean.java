@@ -219,6 +219,44 @@ public class InvoiceBean {
   public void setTxtFooter(String txtFooter) {
     this.txtFooter = txtFooter;
   }
+  
+  public Integer getSno() {
+    return sno;
+  }
+  public void setSno(Integer sno) {
+    this.sno = sno;
+  }
+  public String getItem() {
+    return item;
+  }
+  public void setItem(String item) {
+    this.item = item;
+  }
+  public Double getPrice() {
+    return price;
+  }
+  public void setPrice(Double price) {
+    this.price = price;
+  }
+  public Integer getQty() {
+    return qty;
+  }
+  public void setQty(Integer qty) {
+    this.qty = qty;
+  }
+  public Double getTot() {
+    return tot;
+  }
+  public void setTot(Double tot) {
+    this.tot = tot;
+  }
+
+  private Integer sno;
+  private String item;
+  private Double price;
+  private Integer qty;
+  private Double tot;
+  
   private String invTxt;
   private String txtLine1;
   private String txtCompanyName;
@@ -254,6 +292,34 @@ public class InvoiceBean {
   private Double etctotal;
   private Double total;
   private String txtFooter;
+  private String services;
+  private String paymentTxt;
+  private String paymentDetails;
+  
+  
+  public String getPaymentTxt() {
+	return paymentTxt;
+}
+public void setPaymentTxt(String paymentTxt) {
+	this.paymentTxt = paymentTxt;
+}
+public String getPaymentDetails() {
+	return paymentDetails;
+}
+public void setPaymentDetails(String paymentDetails) {
+	this.paymentDetails = paymentDetails;
+}
+
+
+  
+  
+  
+public String getServices() {
+	return services;
+}
+public void setServices(String services) {
+	this.services = services;
+}
 
   
 

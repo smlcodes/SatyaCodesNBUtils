@@ -142,7 +142,7 @@ public class LoginGUI extends javax.swing.JFrame {
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         try {
             // TODO add your handling code here:
-            Connection con = DBConnection.getMySQLConnection();
+            Connection con = DBConnection.getConnection();
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery("Select * from user where username = '" + userTxt.getText() + "'");
 
@@ -156,10 +156,13 @@ public class LoginGUI extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Login Success :: " + uname);
                     dispose();
 
-                    DashBoardForm dbf = new DashBoardForm();
+                    DashBoardGUI dbf = new DashBoardGUI();
                     dbf.setVisible(true);
                 }
 
+            }else {
+            	
+            	JOptionPane.showMessageDialog(this, "No Records Found :: " + userTxt.getText()+"/"+pwdtxt.getText());
             }
 
         } catch (Exception ex) {
@@ -173,7 +176,7 @@ public class LoginGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         dispose();
-        SignupForm sf = new SignupForm();
+        SignupGUI sf = new SignupGUI();
         sf.setVisible(true);
     }//GEN-LAST:event_signupBtnActionPerformed
 

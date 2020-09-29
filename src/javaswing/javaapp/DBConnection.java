@@ -26,6 +26,25 @@ public class DBConnection {
         in.close();
         return prop;
     }
+    
+    
+    
+    public static Connection getConnection() throws Exception {
+
+        Properties prop = loadPropertiesFile();
+        String driverClass = prop.getProperty("msaccess.driver");
+        String url = prop.getProperty("msaccess.url");
+        Class.forName(driverClass);
+        Connection con = DriverManager.getConnection(url);
+        if (con != null) {
+            System.out.println("Connection SUccess " + con);
+        } else {
+            System.out.println("Connection Failed " + con);
+        }
+        return con;
+    }
+    
+    
 
     public static Connection getMySQLConnection() throws Exception {
         Properties prop = loadPropertiesFile();

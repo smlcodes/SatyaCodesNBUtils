@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class SignupGUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form LoginForm
+     * Creates new form LoginGUI
      */
     public SignupGUI() {
         initComponents();
@@ -124,7 +124,7 @@ public class SignupGUI extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
 
-            Connection con = DBConnection.getMySQLConnection();
+            Connection con = DBConnection.getConnection();
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery("Select * from user where username = '"+userTxt.getText()+"'");
 
@@ -143,7 +143,7 @@ public class SignupGUI extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, userTxt.getText() + " Profile Created Succssfulluy ");
                     dispose();
 
-                    LoginForm sf = new LoginForm();
+                    LoginGUI sf = new LoginGUI();
                     sf.setVisible(true);
                
             }
