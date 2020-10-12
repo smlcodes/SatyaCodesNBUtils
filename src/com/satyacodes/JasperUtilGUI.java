@@ -1,7 +1,7 @@
 /**
  * 
  */
-package javaswing.javaapp;
+package com.satyacodes;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -39,7 +39,7 @@ public class JasperUtilGUI extends JFrame {
    */
   public JasperUtilGUI() {
     setTitle("Jasper Util");
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     setBounds(100, 100, 900, 562);
     contentPane = new JPanel();
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

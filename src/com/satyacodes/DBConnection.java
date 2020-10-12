@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaswing.javaapp;
+package com.satyacodes;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -21,7 +21,7 @@ public class DBConnection {
 
     public static Properties loadPropertiesFile() throws Exception {
         Properties prop = new Properties();
-        InputStream in = new FileInputStream("db.properties");
+        InputStream in = new FileInputStream("reports/db.properties");
         prop.load(in);
         in.close();
         return prop;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaswing.javaapp;
+package com.satyacodes;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -15,6 +15,7 @@ import java.awt.Font;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JFrame;
 
 /**
  *
@@ -47,7 +48,7 @@ public class LoginGUI extends javax.swing.JFrame {
         signupBtn = new javax.swing.JButton();
         closeBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 

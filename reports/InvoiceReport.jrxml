@@ -48,6 +48,8 @@
 	<field name="services" class="java.lang.String"/>
 	<field name="paymentTxt" class="java.lang.String"/>
 	<field name="paymentDetails" class="java.lang.String"/>
+	<field name="signatureName" class="java.lang.String"/>
+	<field name="signature" class="java.lang.String"/>
 	<title>
 		<band height="105" splitType="Stretch">
 			<image>
@@ -246,7 +248,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="31" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<rectangle>
 				<reportElement x="0" y="0" width="554" height="30" uuid="ef5550a1-2c2b-4745-a1e2-67dc33570e1d"/>
 			</rectangle>
@@ -310,21 +312,35 @@
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="46" splitType="Stretch">
+		<band height="90" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="27" width="549" height="18" uuid="70f1c496-c9b1-43e4-b38f-ea15870ccbd6"/>
+				<reportElement x="0" y="70" width="549" height="18" uuid="70f1c496-c9b1-43e4-b38f-ea15870ccbd6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Consolas" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{txtFooter}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="-1" width="554" height="28" forecolor="#FA1E1E" uuid="bad5a442-ec73-44df-a8f1-ca98199409af"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Century Gothic" size="20" isBold="true"/>
+				<reportElement x="379" y="7" width="175" height="20" uuid="45e45711-82b2-47f0-888c-845cd1814f20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="Century" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Thank You.]]></text>
+				<text><![CDATA[Thank You, ]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="380" y="30" width="174" height="26" forecolor="#0741E0" uuid="26528bc1-1748-4c14-908b-3905c10e8f3f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Mistral" size="25" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{signature}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="52" width="176" height="19" uuid="e0a1280e-2e2b-42cd-b8e0-11180ef0aac8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Consolas" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{signatureName}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageFooter>
 	<summary>
@@ -357,7 +373,7 @@
 				<reportElement x="-18" y="70" width="590" height="1" forecolor="#000000" uuid="594d6a6d-03c3-4f80-bdb8-d6b569c33ccc"/>
 			</line>
 			<staticText>
-				<reportElement x="3" y="70" width="293" height="30" uuid="693036fb-b96d-4bf4-a625-10cfeee24176"/>
+				<reportElement x="3" y="70" width="377" height="30" uuid="693036fb-b96d-4bf4-a625-10cfeee24176"/>
 				<box>
 					<pen lineWidth="1.0" lineStyle="Dotted" lineColor="#0D65E0"/>
 				</box>
@@ -367,7 +383,7 @@
 				<text><![CDATA[Our Services]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="3" y="101" width="377" height="128" uuid="67b53c58-ff25-46a5-b2c4-71054f087321"/>
+				<reportElement x="17" y="110" width="362" height="119" uuid="67b53c58-ff25-46a5-b2c4-71054f087321"/>
 				<textElement>
 					<font fontName="Century" size="10" isBold="true" isItalic="false"/>
 				</textElement>

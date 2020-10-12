@@ -1,7 +1,7 @@
 /**
  * 
  */
-package javaswing.javaapp;
+package com.satyacodes;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -32,8 +32,8 @@ import java.awt.event.FocusEvent;
 import java.awt.Component;
 import javax.swing.Box;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
+import com.satyacodes.bean.InvoiceBean;
 
-import javaswing.javaapp.bean.InvoiceBean;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -122,6 +122,8 @@ public class InvoiceUtilGUI extends JFrame {
 	String pattern = "dd-MM-yyyy";
 	SimpleDateFormat sdf = new SimpleDateFormat(pattern);
 	private JTextField paymentTxt;
+	private JTextField signature;
+	private JTextField signatureName;
 
 	/**
 	 * Launch the application.
@@ -145,8 +147,8 @@ public class InvoiceUtilGUI extends JFrame {
 	 */
 	public InvoiceUtilGUI() {
 		setTitle("Invoice Util");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1418, 877);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(48, -45, 1473, 899);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -156,23 +158,23 @@ public class InvoiceUtilGUI extends JFrame {
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1.setForeground(Color.BLUE);
 		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_1.setBounds(25, 247, 121, 38);
+		lblNewLabel_1_1.setBounds(81, 255, 121, 38);
 		contentPane.add(lblNewLabel_1_1);
 
 		JLabel lblNewLabel_1_3 = new JLabel("InvNo\r\n");
 		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_3.setBounds(0, 13, 62, 38);
+		lblNewLabel_1_3.setBounds(56, 21, 62, 38);
 		contentPane.add(lblNewLabel_1_3);
 
 		invTxt = new JTextField();
 		invTxt.setFont(new Font("Tahoma", Font.BOLD, 18));
-		invTxt.setBounds(62, 20, 86, 33);
+		invTxt.setBounds(118, 28, 86, 33);
 		contentPane.add(invTxt);
 		invTxt.setColumns(10);
 
 		JLabel lblNewLabel_1_3_1 = new JLabel("Date");
 		lblNewLabel_1_3_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_3_1.setBounds(0, 61, 71, 38);
+		lblNewLabel_1_3_1.setBounds(56, 69, 71, 38);
 		contentPane.add(lblNewLabel_1_3_1);
 
 		txtCompanyName = new JTextField();
@@ -184,7 +186,7 @@ public class InvoiceUtilGUI extends JFrame {
 		});
 		txtCompanyName.setText("Company Name");
 		txtCompanyName.setFont(new Font("Tahoma", Font.BOLD, 18));
-		txtCompanyName.setBounds(163, 13, 451, 38);
+		txtCompanyName.setBounds(219, 21, 451, 38);
 		contentPane.add(txtCompanyName);
 		txtCompanyName.setColumns(10);
 
@@ -198,7 +200,7 @@ public class InvoiceUtilGUI extends JFrame {
 		dateTxt1.setText("date");
 		dateTxt1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		dateTxt1.setColumns(10);
-		dateTxt1.setBounds(62, 64, 86, 33);
+		dateTxt1.setBounds(118, 72, 86, 33);
 		contentPane.add(dateTxt1);
 
 		txtLine2 = new JTextField();
@@ -211,7 +213,7 @@ public class InvoiceUtilGUI extends JFrame {
 		txtLine2.setText("Line 2");
 		txtLine2.setFont(new Font("Tahoma", Font.BOLD, 18));
 		txtLine2.setColumns(10);
-		txtLine2.setBounds(629, 63, 458, 39);
+		txtLine2.setBounds(685, 71, 458, 39);
 		contentPane.add(txtLine2);
 
 		txtPhno = new JTextField();
@@ -224,7 +226,7 @@ public class InvoiceUtilGUI extends JFrame {
 		txtPhno.setText("Ph.no");
 		txtPhno.setFont(new Font("Tahoma", Font.BOLD, 18));
 		txtPhno.setColumns(10);
-		txtPhno.setBounds(629, 13, 215, 38);
+		txtPhno.setBounds(685, 21, 215, 38);
 		contentPane.add(txtPhno);
 
 		txtWebsite = new JTextField();
@@ -237,7 +239,7 @@ public class InvoiceUtilGUI extends JFrame {
 		txtWebsite.setText("website/email");
 		txtWebsite.setFont(new Font("Tahoma", Font.BOLD, 18));
 		txtWebsite.setColumns(10);
-		txtWebsite.setBounds(849, 13, 238, 38);
+		txtWebsite.setBounds(905, 21, 238, 38);
 		contentPane.add(txtWebsite);
 
 		txtLine1 = new JTextField();
@@ -250,7 +252,7 @@ public class InvoiceUtilGUI extends JFrame {
 		});
 		txtLine1.setFont(new Font("Tahoma", Font.BOLD, 18));
 		txtLine1.setColumns(10);
-		txtLine1.setBounds(163, 61, 451, 38);
+		txtLine1.setBounds(219, 69, 451, 38);
 		contentPane.add(txtLine1);
 
 		txtCustname = new JTextField();
@@ -261,7 +263,7 @@ public class InvoiceUtilGUI extends JFrame {
 			}
 		});
 		txtCustname.setText("custName");
-		txtCustname.setBounds(12, 159, 254, 26);
+		txtCustname.setBounds(68, 167, 254, 26);
 		contentPane.add(txtCustname);
 		txtCustname.setColumns(10);
 
@@ -274,7 +276,7 @@ public class InvoiceUtilGUI extends JFrame {
 		});
 		txtCustcompany.setText("custCompany");
 		txtCustcompany.setColumns(10);
-		txtCustcompany.setBounds(278, 159, 254, 26);
+		txtCustcompany.setBounds(334, 167, 254, 26);
 		contentPane.add(txtCustcompany);
 
 		txtCustline1 = new JTextField();
@@ -286,7 +288,7 @@ public class InvoiceUtilGUI extends JFrame {
 		});
 		txtCustline1.setText("custLine1");
 		txtCustline1.setColumns(10);
-		txtCustline1.setBounds(547, 159, 254, 26);
+		txtCustline1.setBounds(603, 167, 254, 26);
 		contentPane.add(txtCustline1);
 
 		txtCustline2 = new JTextField();
@@ -298,113 +300,113 @@ public class InvoiceUtilGUI extends JFrame {
 		});
 		txtCustline2.setText("custLine2");
 		txtCustline2.setColumns(10);
-		txtCustline2.setBounds(816, 159, 271, 26);
+		txtCustline2.setBounds(872, 167, 271, 26);
 		contentPane.add(txtCustline2);
 
 		lblNewLabel_1 = new JLabel("Customer ");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1.setBounds(10, 125, 146, 38);
+		lblNewLabel_1.setBounds(66, 133, 146, 38);
 		contentPane.add(lblNewLabel_1);
 
 		lblNewLabel_1_2 = new JLabel("Invoice Details");
 		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_2.setBounds(0, 217, 146, 38);
+		lblNewLabel_1_2.setBounds(56, 225, 146, 38);
 		contentPane.add(lblNewLabel_1_2);
 
 		lblNewLabel_1_4 = new JLabel("Item Name");
 		lblNewLabel_1_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_4.setForeground(Color.BLUE);
 		lblNewLabel_1_4.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_4.setBounds(184, 247, 146, 38);
+		lblNewLabel_1_4.setBounds(240, 255, 146, 38);
 		contentPane.add(lblNewLabel_1_4);
 
 		lblNewLabel_1_5 = new JLabel("Qty\r\n");
 		lblNewLabel_1_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_5.setForeground(Color.BLUE);
 		lblNewLabel_1_5.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_5.setBounds(795, 247, 146, 38);
+		lblNewLabel_1_5.setBounds(851, 255, 146, 38);
 		contentPane.add(lblNewLabel_1_5);
 
 		lblNewLabel_1_6 = new JLabel("Price");
 		lblNewLabel_1_6.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_6.setForeground(Color.BLUE);
 		lblNewLabel_1_6.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_6.setBounds(629, 247, 146, 38);
+		lblNewLabel_1_6.setBounds(685, 255, 146, 38);
 		contentPane.add(lblNewLabel_1_6);
 
 		sno1 = new JTextField();
 		sno1.setText("1");
-		sno1.setBounds(38, 282, 95, 26);
+		sno1.setBounds(94, 290, 95, 26);
 		contentPane.add(sno1);
 		sno1.setColumns(10);
 
 		sno2 = new JTextField();
 		sno2.setText("2");
 		sno2.setColumns(10);
-		sno2.setBounds(38, 324, 95, 26);
+		sno2.setBounds(94, 332, 95, 26);
 		contentPane.add(sno2);
 
 		sno3 = new JTextField();
 		sno3.setText("3");
 		sno3.setColumns(10);
-		sno3.setBounds(38, 366, 95, 26);
+		sno3.setBounds(94, 374, 95, 26);
 		contentPane.add(sno3);
 
 		sno4 = new JTextField();
 		sno4.setText("4");
 		sno4.setColumns(10);
-		sno4.setBounds(38, 411, 95, 26);
+		sno4.setBounds(94, 419, 95, 26);
 		contentPane.add(sno4);
 
 		i1 = new JTextField();
-		i1.setBounds(184, 282, 418, 26);
+		i1.setBounds(240, 290, 418, 26);
 		contentPane.add(i1);
 		i1.setColumns(10);
 
 		i2 = new JTextField();
 		i2.setColumns(10);
-		i2.setBounds(184, 324, 418, 26);
+		i2.setBounds(240, 332, 418, 26);
 		contentPane.add(i2);
 
 		i3 = new JTextField();
 		i3.setColumns(10);
-		i3.setBounds(184, 366, 418, 26);
+		i3.setBounds(240, 374, 418, 26);
 		contentPane.add(i3);
 
 		i4 = new JTextField();
 		i4.setColumns(10);
-		i4.setBounds(184, 411, 418, 26);
+		i4.setBounds(240, 419, 418, 26);
 		contentPane.add(i4);
 
 		lblNewLabel_1_7 = new JLabel("Total\r\n");
 		lblNewLabel_1_7.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_7.setForeground(Color.BLUE);
 		lblNewLabel_1_7.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_7.setBounds(956, 247, 146, 38);
+		lblNewLabel_1_7.setBounds(1012, 255, 146, 38);
 		contentPane.add(lblNewLabel_1_7);
 
 		p1 = new JTextField();
 		p1.setText("0");
 		p1.setColumns(10);
-		p1.setBounds(651, 282, 95, 26);
+		p1.setBounds(707, 290, 95, 26);
 		contentPane.add(p1);
 
 		p2 = new JTextField();
 		p2.setText("0");
 		p2.setColumns(10);
-		p2.setBounds(651, 324, 95, 26);
+		p2.setBounds(707, 332, 95, 26);
 		contentPane.add(p2);
 
 		p3 = new JTextField();
 		p3.setText("0");
 		p3.setColumns(10);
-		p3.setBounds(651, 366, 95, 26);
+		p3.setBounds(707, 374, 95, 26);
 		contentPane.add(p3);
 
 		p4 = new JTextField();
 		p4.setText("0");
 		p4.setColumns(10);
-		p4.setBounds(651, 411, 95, 26);
+		p4.setBounds(707, 419, 95, 26);
 		contentPane.add(p4);
 
 		q1 = new JTextField();
@@ -426,7 +428,7 @@ public class InvoiceUtilGUI extends JFrame {
 			}
 		});
 		q1.setColumns(10);
-		q1.setBounds(804, 282, 95, 26);
+		q1.setBounds(860, 290, 95, 26);
 		contentPane.add(q1);
 
 		q2 = new JTextField();
@@ -443,7 +445,7 @@ public class InvoiceUtilGUI extends JFrame {
 			}
 		});
 		q2.setColumns(10);
-		q2.setBounds(804, 324, 95, 26);
+		q2.setBounds(860, 332, 95, 26);
 		contentPane.add(q2);
 
 		q3 = new JTextField();
@@ -460,7 +462,7 @@ public class InvoiceUtilGUI extends JFrame {
 			}
 		});
 		q3.setColumns(10);
-		q3.setBounds(804, 366, 95, 26);
+		q3.setBounds(860, 374, 95, 26);
 		contentPane.add(q3);
 
 		q4 = new JTextField();
@@ -478,7 +480,7 @@ public class InvoiceUtilGUI extends JFrame {
 
 		});
 		q4.setColumns(10);
-		q4.setBounds(804, 411, 95, 26);
+		q4.setBounds(860, 419, 95, 26);
 		contentPane.add(q4);
 
 		t1 = new JTextField();
@@ -489,50 +491,50 @@ public class InvoiceUtilGUI extends JFrame {
 		});
 		t1.setText("0");
 		t1.setColumns(10);
-		t1.setBounds(954, 282, 121, 26);
+		t1.setBounds(1010, 290, 121, 26);
 		contentPane.add(t1);
 
 		t2 = new JTextField();
 		t2.setText("0");
 		t2.setColumns(10);
-		t2.setBounds(954, 324, 121, 26);
+		t2.setBounds(1010, 332, 121, 26);
 		contentPane.add(t2);
 
 		t3 = new JTextField();
 		t3.setText("0");
 		t3.setColumns(10);
-		t3.setBounds(954, 366, 121, 26);
+		t3.setBounds(1010, 374, 121, 26);
 		contentPane.add(t3);
 
 		t4 = new JTextField();
 		t4.setText("0");
 		t4.setColumns(10);
-		t4.setBounds(954, 411, 121, 26);
+		t4.setBounds(1010, 419, 121, 26);
 		contentPane.add(t4);
 
 		etctxt = new JTextField();
 		etctxt.setColumns(10);
-		etctxt.setBounds(804, 453, 95, 26);
+		etctxt.setBounds(860, 461, 95, 26);
 		contentPane.add(etctxt);
 
 		etctotal = new JTextField();
 		etctotal.setText("0");
 		etctotal.setColumns(10);
-		etctotal.setBounds(954, 453, 121, 26);
+		etctotal.setBounds(1010, 461, 121, 26);
 		contentPane.add(etctotal);
 
 		lblNewLabel_1_8 = new JLabel("Etc.,");
 		lblNewLabel_1_8.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_8.setForeground(Color.BLUE);
 		lblNewLabel_1_8.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_8.setBounds(728, 453, 71, 38);
+		lblNewLabel_1_8.setBounds(784, 461, 71, 38);
 		contentPane.add(lblNewLabel_1_8);
 
 		lblNewLabel_1_9 = new JLabel("TOTAL");
 		lblNewLabel_1_9.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_9.setForeground(Color.RED);
 		lblNewLabel_1_9.setFont(new Font("Tahoma", Font.BOLD, 28));
-		lblNewLabel_1_9.setBounds(668, 495, 121, 54);
+		lblNewLabel_1_9.setBounds(724, 503, 121, 54);
 		contentPane.add(lblNewLabel_1_9);
 
 		total = new JTextField();
@@ -540,22 +542,22 @@ public class InvoiceUtilGUI extends JFrame {
 		total.setForeground(Color.RED);
 		total.setFont(new Font("Tahoma", Font.BOLD, 28));
 		total.setColumns(10);
-		total.setBounds(804, 495, 271, 54);
+		total.setBounds(860, 503, 271, 54);
 		contentPane.add(total);
 
 		lblNewLabel_1_10 = new JLabel("Our Services");
 		lblNewLabel_1_10.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_10.setBounds(12, 520, 146, 38);
+		lblNewLabel_1_10.setBounds(68, 528, 146, 38);
 		contentPane.add(lblNewLabel_1_10);
 
 		services = new TextArea();
-		services.setBounds(12, 567, 517, 228);
+		services.setBounds(68, 575, 517, 228);
 		contentPane.add(services);
 
 		txtFooter = new JTextField();
 		txtFooter.setText("Footer\r\n");
 		txtFooter.setColumns(10);
-		txtFooter.setBounds(541, 779, 638, 26);
+		txtFooter.setBounds(597, 787, 638, 26);
 		contentPane.add(txtFooter);
 
 		JButton printbtn = new JButton("PRINT");
@@ -578,7 +580,7 @@ public class InvoiceUtilGUI extends JFrame {
 		});
 		printbtn.setForeground(new Color(0, 128, 0));
 		printbtn.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 32));
-		printbtn.setBounds(1100, 430, 180, 119);
+		printbtn.setBounds(1156, 438, 180, 119);
 		contentPane.add(printbtn);
 
 		JButton btnSum = new JButton("SUM");
@@ -606,7 +608,7 @@ public class InvoiceUtilGUI extends JFrame {
 		});
 		btnSum.setForeground(new Color(165, 42, 42));
 		btnSum.setFont(new Font("Tahoma", Font.BOLD, 22));
-		btnSum.setBounds(1101, 366, 163, 47);
+		btnSum.setBounds(1157, 374, 163, 47);
 		contentPane.add(btnSum);
 
 		JButton btnLoad = new JButton("Load");
@@ -623,7 +625,7 @@ public class InvoiceUtilGUI extends JFrame {
 		});
 		btnLoad.setForeground(Color.BLUE);
 		btnLoad.setFont(new Font("Century Gothic", Font.BOLD, 18));
-		btnLoad.setBounds(1117, 8, 105, 47);
+		btnLoad.setBounds(1173, 16, 105, 47);
 		contentPane.add(btnLoad);
 
 		JButton btnUpdate = new JButton("Update");
@@ -640,20 +642,32 @@ public class InvoiceUtilGUI extends JFrame {
 		});
 		btnUpdate.setForeground(Color.BLUE);
 		btnUpdate.setFont(new Font("Century Gothic", Font.BOLD, 18));
-		btnUpdate.setBounds(1117, 64, 105, 47);
+		btnUpdate.setBounds(1173, 72, 105, 47);
 		contentPane.add(btnUpdate);
 
 		paymentTxt = new JTextField();
 		paymentTxt.setText("Mode of Payment");
 		paymentTxt.setFont(new Font("Tahoma", Font.BOLD, 12));
 		paymentTxt.setColumns(10);
-		paymentTxt.setBounds(547, 565, 197, 38);
+		paymentTxt.setBounds(603, 573, 197, 38);
 		contentPane.add(paymentTxt);
 
 		paymentDetails = new TextArea();
 		paymentDetails.setColumns(60);
-		paymentDetails.setBounds(547, 604, 501, 140);
+		paymentDetails.setBounds(603, 612, 501, 140);
 		contentPane.add(paymentDetails);
+		
+		signature = new JTextField();
+		signature.setText("Satya Kaveti");
+		signature.setBounds(1174, 627, 180, 26);
+		contentPane.add(signature);
+		signature.setColumns(10);
+		
+		signatureName = new JTextField();
+		signatureName.setText("( Kaveti VS Satyanarayana )");
+		signatureName.setColumns(10);
+		signatureName.setBounds(1173, 669, 181, 26);
+		contentPane.add(signatureName);
 	}
 
 	private List<InvoiceBean> getInvoiceBean() {
@@ -706,6 +720,9 @@ public class InvoiceUtilGUI extends JFrame {
 		i.setPrice(i.getP1());
 		i.setQty(i.getQ1());
 		i.setTot(i.getT1());
+		
+		i.setSignature(signature.getText());
+		i.setSignatureName(signatureName.getText());
 		invList.add(i);
 
 		if (i.getSno2() > 0 && !i.getI2().isEmpty() && i.getP2() > 0 && i.getT2() > 0) {
@@ -722,6 +739,8 @@ public class InvoiceUtilGUI extends JFrame {
 			i2.setServices(services.getText());
 			i2.setPaymentTxt(paymentTxt.getText());
 			i2.setPaymentDetails(paymentDetails.getText());
+			i2.setSignature(signature.getText());
+			i2.setSignatureName(signatureName.getText());
 			invList.add(i2);
 		}
 
@@ -741,6 +760,9 @@ public class InvoiceUtilGUI extends JFrame {
 			i3.setPaymentTxt(paymentTxt.getText());
 			i3.setPaymentDetails(paymentDetails.getText());
 
+			i3.setSignature(signature.getText());
+			i3.setSignatureName(signatureName.getText());
+			
 			invList.add(i3);
 		}
 
@@ -758,6 +780,9 @@ public class InvoiceUtilGUI extends JFrame {
 			i4.setTxtFooter(txtFooter.getText());
 			i4.setServices(services.getText());
 
+			
+			i4.setSignature(signature.getText());
+			i4.setSignatureName(signatureName.getText());
 			i4.setPaymentTxt(paymentTxt.getText());
 			i4.setPaymentDetails(paymentDetails.getText());
 

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaswing.javaapp;
+package com.satyacodes;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,6 +11,8 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import java.awt.Font;
+import javax.swing.JFrame;
 
 /**
  *
@@ -41,21 +43,21 @@ public class SignupGUI extends javax.swing.JFrame {
         pwdtxt = new javax.swing.JPasswordField();
         signupBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setFont(new Font("Verdana", Font.BOLD, 16)); // NOI18N
         jLabel1.setText("Password");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new Font("Verdana", Font.BOLD, 16)); // NOI18N
         jLabel2.setText("Username");
 
-        userTxt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        userTxt.setFont(new Font("Verdana", Font.BOLD, 16)); // NOI18N
 
-        pwdtxt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        pwdtxt.setFont(new Font("Verdana", Font.BOLD, 16)); // NOI18N
 
-        signupBtn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        signupBtn.setFont(new Font("Verdana", Font.BOLD, 16)); // NOI18N
         signupBtn.setText("Signup");
         signupBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

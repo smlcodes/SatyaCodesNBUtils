@@ -1,7 +1,7 @@
 /**
  * 
  */
-package javaswing.javaapp.bean;
+package com.satyacodes.bean;
 
 /**
  * @author KavetiS
@@ -295,6 +295,21 @@ public class InvoiceBean {
   private String services;
   private String paymentTxt;
   private String paymentDetails;
+  public String getSignatureName() {
+	return signatureName;
+}
+public void setSignatureName(String signatureName) {
+	this.signatureName = signatureName;
+}
+public String getSignature() {
+	return signature;
+}
+public void setSignature(String signature) {
+	this.signature = signature;
+}
+
+private String signatureName;
+  private String signature;
   
   
   public String getPaymentTxt() {
